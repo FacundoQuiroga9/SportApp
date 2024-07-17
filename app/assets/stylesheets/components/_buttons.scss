@@ -1,0 +1,33 @@
+.btn-custom {
+  background-color: #edd000;
+  color: #000000;
+  border-radius: 0 !important;
+  font-weight: bold;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  display: inline;
+  font-family: "Staatliches", sans-serif;
+  font-size: 1.2rem;
+
+  &:hover {
+    background-color: #d8bf01;
+    color: black;
+  }
+}
+
+.btn-delete {
+  background-color: #ed1400;
+  color: white;
+  border-radius: 0 !important;
+  font-weight: bold;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  display: inline;
+  font-family: "Staatliches", sans-serif;
+  font-size: 1.2rem;
+
+  &:hover {
+    background-color: #a30e00;
+    color: white;
+  }
+}

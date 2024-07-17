@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SportsApp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Staatliches&display=swap" rel="stylesheet">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-links-track': 'reload' %>
+  <%= javascript_importmap_tags %>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <%= render 'shared/navbar' %>
+    <%= yield %>
+  <%= render 'shared/footer' %>
+</body>
+</html>

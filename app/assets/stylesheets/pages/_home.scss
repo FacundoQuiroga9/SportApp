@@ -1,0 +1,50 @@
+// Estilos para la página de inicio
+.home-banner {
+  background: url('banner.jpg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  color: #fff;
+  display: flex;
+  padding: 5rem;
+  h1{
+    font-size: 5rem;
+    color: #edd000;
+    font-weight: bold;
+    text-shadow: black 3px 3px 3px;
+    font-family: "Staatliches", sans-serif;
+  }
+  p{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    display: block;
+    text-shadow: black 2px 2px 2px;
+  }
+
+
+}
+
+.section1 {
+  .motivation-phrase {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #edd000;
+    font-family: "Staatliches", sans-serif;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: #edd000;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: .8rem;
+    color: #abaaaa;
+  }
+
+  img {
+    height: 300px;
+  }
+
+}

@@ -1,0 +1,88 @@
+.page-title{
+  font-size: 4rem;
+  color: white;
+}
+
+.custom-card-link {
+  text-decoration: none;
+  color: white;
+
+}
+
+.custom-card-link{
+  width: 100%;
+  padding: 0;
+  height: 350px;
+}
+
+.custom-card:hover{
+  cursor: pointer;
+}
+
+.exercise-card {
+  cursor: pointer;
+  &.selected {
+    background-color: rgba(237, 208, 0, 0.1);
+    box-shadow: 0 0 10px rgba(237, 208, 0, 0.5);
+  }
+}
+
+
+.custom-card {
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: transform 0.2s, background-color 0.2s, border 0.2s, box-shadow 0.2s;
+  border: 1px solid #edd000;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+
+
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #edd000;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    color: #a8a7a7;
+  }
+}
+
+
+.exercise-photo, .no-photo{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.detail-item{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+.detail-title{
+  font-size: 3rem;
+}
+
+.detail-value{
+  font-size: 2.5rem;
+}
+
+.name-section > h2{
+  color: #edd000;
+}

@@ -1,0 +1,45 @@
+<%= form_with model: @routine, local: true, class: 'form-group' do |form| %>
+
+<div class="row align-items-end">
+  <div class="col-4">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="col-3">
+      <%= form.label :category, class: 'form-label' %>
+      <%= form.select :category, Routine::CATEGORIES, {}, { class: 'custom-select' } %>
+  </div>
+  <div class="col-2">
+     <%= form.submit 'Create Routine', class: 'btn-custom' %>
+  </div>
+</div>
+
+  <h2 class="mt-5 mb-4">Select Exercises</h2>
+
+  <div class="row">
+    <% @exercises.each do |exercise| %>
+      <div class="col-md-3 d-flex align-items-stretch">
+        <div class="custom-card mb-4 shadow-sm exercise-card" data-exercise-id="<%= exercise.id %>">
+          <% if exercise.photo.attached? %>
+            <%= image_tag exercise.photo, class: "card-img-top" %>
+          <% end %>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><%= exercise.name %></h5>
+            <% if exercise.duration.present? %>
+              <p class="card-text"><strong>Duration:</strong> <%= exercise.duration %> minutes</p>
+            <% end %>
+            <% if exercise.sets.present? %>
+              <p class="card-text"><strong>Sets:</strong> <%= exercise.sets %></p>
+            <% end %>
+            <% if exercise.repetitions.present? %>
+              <p class="card-text"><strong>Repetitions:</strong> <%= exercise.repetitions %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= form.hidden_field :exercise_ids, id: 'selected-exercises', multiple: true %>
+
+<% end %>

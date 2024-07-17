@@ -1,0 +1,32 @@
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid white;
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.custom-select::after {
+  content: '▼';
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #fff;
+}
+
+#routine_name{
+  margin: 0;
+}

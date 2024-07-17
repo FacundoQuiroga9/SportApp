@@ -1,0 +1,39 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+ @import "bootstrap";
+
+
+// Importar componentes
+@import "components/buttons";
+@import "components/forms";
+@import "components/dropdown";
+
+// Importar layouts
+@import "layouts/navbar";
+
+// Importar páginas
+@import "pages/home";
+@import "pages/exercises";
+@import "pages/routines";
+
+
+body{
+  background: rgb(0,0,0);
+  background: linear-gradient(108deg, rgba(0,0,0,1) 0%, rgba(41,44,47,1) 100%);
+  color: white;
+  font-family: "Orbitron", sans-serif;
+}

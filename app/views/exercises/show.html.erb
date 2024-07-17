@@ -1,0 +1,43 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6">
+      <% if @exercise.photo.attached? %>
+        <%= image_tag @exercise.photo, class: "exercise-photo" %>
+      <% else %>
+        <div class="no-photo">No Photo</div>
+      <% end %>
+    </div>
+    <div class="col-3">
+      <% if @exercise.duration.present? %>
+        <div class="detail-item">
+          <span class="detail-title">Duration</span>
+          <span class="detail-value"><%= @exercise.duration %> minutes</span>
+        </div>
+      <% end %>
+      <% if @exercise.sets.present? %>
+        <div class="detail-item">
+          <span class="detail-title">Sets</span>
+          <span class="detail-value"><%= @exercise.sets %></span>
+        </div>
+      <% end %>
+      <% if @exercise.repetitions.present? %>
+        <div class="detail-item">
+          <span class="detail-title">Reps</span>
+          <span class="detail-value"><%= @exercise.repetitions %></span>
+        </div>
+      <% end %>
+    </div>
+    <div class="col d-flex justify-content-end align-items-start">
+        <%= link_to 'Edit', edit_exercise_path(@exercise), class: 'btn-custom me-1' %>
+        <%= link_to "Delete", exercise_path(@exercise),
+            data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+            class: "btn-delete" %>
+      </div>
+    <div class="name-section mt-5">
+      <h2><%= @exercise.name %></h2>
+    </div>
+    <div class="description-section">
+      <p><%= @exercise.description %></p>
+    </div>
+  </div>
+</div>

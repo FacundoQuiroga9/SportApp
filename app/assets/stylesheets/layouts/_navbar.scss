@@ -1,0 +1,19 @@
+// Estilos para la barra de navegación
+.navbar-custom {
+  background-color: #292c2f;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  .navbar-brand {
+    color: #fff;
+  }
+  .nav-link {
+    color: #fff;
+    &:hover {
+      color: #edd000;
+    }
+  }
+
+  .logo-img{
+    width: 20rem;
+  }
+
+}

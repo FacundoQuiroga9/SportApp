@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <h1 class="mb-4"><%= @routine.name %></h1>
+    </div>
+    <div class="col d-flex justify-content-end align-items-start">
+      <%= link_to 'Edit', edit_routine_path(@routine), class: 'btn-custom me-1' %>
+      <%= link_to "Delete", routine_path(@routine),
+          data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+          class: "btn-delete" %>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-12">
+      <p class="lead"><strong>Category:</strong> <%= @routine.category %></p>
+    </div>
+  </div>
+  <div class="row">
+    <% @routine.exercises.each_with_index do |exercise, index| %>
+      <div class="col-md-4">
+        <%= link_to exercise_path(exercise), class: "exercise-card-link" do %>
+          <div class="routine-exercise-card position-relative mb-4">
+            <div class="number-badge position-absolute">
+              <span><%= index + 1 %></span>
+            </div>
+            <% if exercise.photo.attached? %>
+              <%= image_tag exercise.photo, class: "exercise-photo img-fluid" %>
+            <% else %>
+              <div class="no-photo">No Photo</div>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= exercise.name %></h5>
+              <ul class="list-unstyled">
+                <% if exercise.sets.present? %>
+                  <li><strong>Sets:</strong> <%= exercise.sets %></li>
+                <% end %>
+                <% if exercise.repetitions.present? %>
+                  <li><strong>Reps:</strong> <%= exercise.repetitions %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

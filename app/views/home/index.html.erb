@@ -1,0 +1,36 @@
+<div class="home-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h1>Workout World</h1>
+        <p>Your ultimate app for managing your sports training routines and exercises.</p>
+        <%= link_to 'Get Started', new_user_registration_path, class: 'btn btn-custom' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5 py-5 section1">
+  <div class="row">
+    <h2 class="text-center motivation-phrase mb-5">
+      Elevate Your Training
+    </h2>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-4 text-center">
+     <%= image_tag 'phone1.png', alt: 'Track Your Progress', class: 'phone-img mb-3' %>
+      <h3>Track Your Progress</h3>
+      <p>Keep track of your exercises and routines with ease.</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <%= image_tag 'mackbook.png', alt: 'Custom Routines', class: 'img-fluid mb-3' %>
+      <h3>Custom Routines</h3>
+      <p>Create and manage custom routines tailored to your needs.</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <%= image_tag '', alt: 'Stay Motivated', class: 'img-fluid mb-3' %>
+      <h3>Stay Motivated</h3>
+      <p>Set goals and stay motivated with our intuitive platform.</p>
+    </div>
+  </div>
+</div>

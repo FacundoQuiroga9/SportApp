@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <div class="row align-items-center mb-5">
+    <div class="col-10 align-items-center">
+      <h1 class="page-title">My Routines</h1>
+    </div>
+    <div class="col-2">
+      <%= link_to 'New Routine', new_routine_path, class: "btn btn-custom mb-4" %>
+    </div>
+  </div>
+  <div class="row">
+    <% @routines.each do |routine| %>
+      <div class="col-md-3 d-flex align-items-stretch">
+        <%= link_to routine_path(routine), class: "category-card-link" do %>
+          <div class="category-card mb-4 shadow-sm" style="background-image: url(<%= asset_path(routine.category_image) %>);">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title"><%= routine.name %></h5>
+              <ul class="card-text">
+                <% routine.exercises.each do |exercise| %>
+                  <li><%= exercise.name %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

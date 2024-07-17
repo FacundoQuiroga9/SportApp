@@ -1,0 +1,23 @@
+// Estilos para los formularios
+
+.form-label {
+  color: white
+}
+
+.form-control {
+  border: 1px solid ;
+  background-color: transparent;
+  color: white;
+  margin: 0;
+
+  &::placeholder {
+    color: white;
+  }
+
+  &:focus {
+    background-color: transparent;
+    outline: none;
+    border-color: white;
+    color: white;
+  }
+}
