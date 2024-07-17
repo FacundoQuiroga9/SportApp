@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col">
-      <h1 class="mb-4"><%= @routine.name %></h1>
+      <h1 class="mb-4"><%= @routine.name %> - <%= @routine.category %></h1>
     </div>
     <div class="col d-flex justify-content-end align-items-start">
       <%= link_to 'Edit', edit_routine_path(@routine), class: 'btn-custom me-1' %>
@@ -12,7 +12,7 @@
   </div>
   <div class="row mb-4">
     <div class="col-12">
-      <p class="lead"><strong>Category:</strong> <%= @routine.category %></p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, fugiat alias. Hic fugiat accusamus amet rerum et repellat vel. Nostrum possimus ipsam, esse ipsa repellat dolore, sit fugiat quidem exercitationem voluptas blanditiis maiores quibusdam doloribus non nam laudantium incidunt, alias optio placeat fuga recusandae vitae commodi? Iste tempore deleniti dolores?</p>
     </div>
   </div>
   <div class="row">
@@ -37,6 +37,9 @@
                 <% if exercise.repetitions.present? %>
                   <li><strong>Reps:</strong> <%= exercise.repetitions %></li>
                 <% end %>
+                <% if exercise.duration.present? %>
+                  <li><%= exercise.duration %> minutes</li>
+              <% end %>
               </ul>
             </div>
           </div>

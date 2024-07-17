@@ -4,6 +4,7 @@ import "controllers"
 import "bootstrap"
 
 document.addEventListener('turbo:load', () => {
+  console.log('Turbo loaded');  // Verificación de carga
   const exerciseCards = document.querySelectorAll('.exercise-card');
   const selectedExercisesInput = document.getElementById('selected-exercises');
 
@@ -22,4 +23,18 @@ document.addEventListener('turbo:load', () => {
       selectedExercisesInput.value = selectedExercises.join(',');
     });
   });
+
+    // Agregar verificación de los formularios
+    const formValidation = document.querySelector('.needs-validation');
+    if (formValidation) {
+      formValidation.addEventListener('submit', (event) => {
+        if (!formValidation.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        formValidation.classList.add('was-validated');
+      });
+    }
+
+    
 });

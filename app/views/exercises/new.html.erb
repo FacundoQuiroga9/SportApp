@@ -1,68 +1,10 @@
+<!-- app/views/exercises/new.html.erb -->
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-6">
-        <h1 class="mb-4">New Exercise</h1>
+      <h1 class="mb-4">New Exercise</h1>
     </div>
   </div>
 
-  <div class="row justify-content-center">
-    <div class="col-3">
-      <%= form_with model: @exercise, local: true, class: "needs-validation" do |form| %>
-      <div class="mb-3">
-        <%= form.label :name, class: "form-label" %>
-        <%= form.text_field :name, class: "form-control", required: true %>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="mb-3">
-        <%= form.label :photo, class: "form-label" %>
-        <%= form.file_field :photo, class: "form-control" %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row justify-content-center">
-    <div class="col-2">
-      <div class="mb-3">
-        <%= form.label :sets, class: "form-label" %>
-        <%= form.number_field :sets, class: "form-control" %>
-      </div>
-    </div>
-    <div class="col-2">
-        <div class="mb-3">
-          <%= form.label :repetitions, class: "form-label" %>
-          <%= form.number_field :repetitions, class: "form-control" %>
-        </div>
-    </div>
-    <div class="col-2">
-      <div class="mb-3">
-        <%= form.label :duration, class: "form-label" %>
-        <%= form.number_field :duration, class: "form-control" %>
-      </div>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <div class="mb-3">
-        <%= form.label :category, class: "form-label" %>
-        <%= form.select :category, options_for_select(["Soccer", "Basketball", "Gym", "Yoga", "Running"]), { prompt: "Select Category" }, { class: "form-control" } %>
-      </div>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <div class="mb-3">
-        <%= form.label :description, class: "form-label" %>
-        <%= form.text_area :description, class: "form-control", rows: 3 %>
-      </div>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-6">
-        <div class="d-grid">
-          <%= form.submit 'Create Exercise', class: "btn-custom" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <%= render 'form', exercise: @exercise, submit_text: 'Create Exercise' %>
 </div>

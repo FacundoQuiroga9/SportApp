@@ -37,7 +37,7 @@
       <h2><%= @exercise.name %></h2>
     </div>
     <div class="description-section">
-      <p><%= @exercise.description %></p>
+      <p><%= simple_format(@exercise.description) %></p>
     </div>
   </div>
 </div>

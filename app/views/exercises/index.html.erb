@@ -10,15 +10,15 @@
   <div class="row">
     <% @exercises.each do |exercise| %>
       <div class="col-md-3 d-flex">
-        <%= link_to exercise_path(exercise), class: "custom-card-link" do %>
-          <div class="custom-card mb-4 shadow-sm">
+        <%= link_to exercise_path(exercise), class: "custom-card-link mb-4" do %>
+          <div class="custom-card  shadow-sm">
             <% if exercise.photo.attached? %>
               <%= image_tag exercise.photo, class: "card-img-top" %>
             <% end %>
             <div class="card-body d-flex flex-column">
               <h5 class="card-title"><%= exercise.name %></h5>
               <% if exercise.duration.present? %>
-                <p class="card-text"><strong>Duration:</strong> <%= exercise.duration %> minutes</p>
+                <p class="card-text"><%= exercise.duration %> minutes</p>
               <% end %>
               <% if exercise.sets.present? %>
                 <p class="card-text"><strong>Sets:</strong> <%= exercise.sets %></p>
