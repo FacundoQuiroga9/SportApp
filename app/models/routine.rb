@@ -16,4 +16,8 @@ class Routine < ApplicationRecord
   def category_image
     CATEGORY_IMAGES[category]
   end
+
+  def ordered_exercises
+    exercises.joins(:routine_exercises).order('routine_exercises.position')
+  end
 end

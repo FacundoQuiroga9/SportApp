@@ -15,7 +15,8 @@
             <div class="card-body d-flex flex-column">
               <h5 class="card-title"><%= routine.name %></h5>
               <ul class="card-text">
-                <% routine.exercises.each do |exercise| %>
+                <% reordered_exercises = routine.ordered_exercises.rotate(-1) %>
+                <% reordered_exercises.each do |exercise| %>
                   <li><%= exercise.name %></li>
                 <% end %>
               </ul>

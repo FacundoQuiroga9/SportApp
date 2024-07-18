@@ -15,8 +15,11 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, fugiat alias. Hic fugiat accusamus amet rerum et repellat vel. Nostrum possimus ipsam, esse ipsa repellat dolore, sit fugiat quidem exercitationem voluptas blanditiis maiores quibusdam doloribus non nam laudantium incidunt, alias optio placeat fuga recusandae vitae commodi? Iste tempore deleniti dolores?</p>
     </div>
   </div>
+
+  <% reordered_exercises = @exercises.rotate(-1) %>  <!-- Mueve el primer elemento al final -->
+
   <div class="row">
-    <% @routine.exercises.each_with_index do |exercise, index| %>
+    <% reordered_exercises.each_with_index do |exercise, index| %>
       <div class="col-md-4">
         <%= link_to exercise_path(exercise), class: "exercise-card-link" do %>
           <div class="routine-exercise-card position-relative mb-4">
@@ -39,7 +42,7 @@
                 <% end %>
                 <% if exercise.duration.present? %>
                   <li><%= exercise.duration %> minutes</li>
-              <% end %>
+                <% end %>
               </ul>
             </div>
           </div>

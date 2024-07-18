@@ -7,7 +7,10 @@ class RoutinesController < ApplicationController
   end
 
   def show
+    @routine = Routine.find(params[:id])
+    @exercises = @routine.ordered_exercises
   end
+
 
   def new
     @routine = Routine.new
@@ -18,8 +21,8 @@ class RoutinesController < ApplicationController
     @routine = current_user.routines.build(routine_params)
     if @routine.save
       exercise_ids = params[:routine][:exercise_ids].flat_map { |id| id.split(',') }.map(&:to_i)
-      exercise_ids.each do |id|
-        RoutineExercise.create!(routine_id: @routine.id, exercise_id: id) unless RoutineExercise.exists?(routine_id: @routine.id, exercise_id: id)
+      exercise_ids.each_with_index do |id, index|
+        RoutineExercise.create!(routine_id: @routine.id, exercise_id: id, position: index + 1) unless RoutineExercise.exists?(routine_id: @routine.id, exercise_id: id)
       end
       redirect_to routines_path, notice: 'Routine was successfully created.'
     else
@@ -56,4 +59,3 @@ class RoutinesController < ApplicationController
     params.require(:routine).permit(:name, :category, exercise_ids: [])
   end
 end
-

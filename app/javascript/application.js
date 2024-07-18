@@ -21,20 +21,23 @@ document.addEventListener('turbo:load', () => {
         selectedExercises.push(exerciseId);
       }
       selectedExercisesInput.value = selectedExercises.join(',');
+      updateExerciseNumbers();
     });
   });
 
-    // Agregar verificación de los formularios
-    const formValidation = document.querySelector('.needs-validation');
-    if (formValidation) {
-      formValidation.addEventListener('submit', (event) => {
-        if (!formValidation.checkValidity()) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        formValidation.classList.add('was-validated');
-      });
-    }
+  function updateExerciseNumbers() {
+    exerciseCards.forEach(card => {
+      const exerciseId = card.getAttribute('data-exercise-id');
+      const numberBadge = card.querySelector('.exercise-number');
+      if (selectedExercises.includes(exerciseId)) {
+        numberBadge.textContent = selectedExercises.indexOf(exerciseId) + 1;
+        numberBadge.style.display = 'block';
+      } else {
+        numberBadge.style.display = 'none';
+      }
+    });
+  }
 
-    
+  updateExerciseNumbers();
 });
+

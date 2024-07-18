@@ -55,6 +55,25 @@
     font-size: 0.9rem;
   }
 }
+.exercise-card {
+  position: relative;
+  .exercise-number {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    background-color: yellow;
+    color: black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 
 //----------------Cards dentro del show de Routines--------------------//
 
@@ -69,13 +88,14 @@
     background-color: #edd000;
     color: #fff;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     position: absolute;
+    font-size: 2rem;
     top: 10px;
     right: 10px;
   }
@@ -115,4 +135,12 @@
   &:hover .routine-exercise-card {
     color: white;
   }
+}
+
+
+.badge{
+  display: none;
+  position: absolute;
+  top: 10px; right: 10px;
+  font-size: 1.2rem;
 }
